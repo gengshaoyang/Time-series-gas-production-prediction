@@ -1,6 +1,6 @@
 clc;clear;close all;	
 %% load data
-data_str = 'Well_A.xlsx' ;   %读取数据的路径 	
+data_str = 'Well_A.xlsx' ;   % Path	
 data = readmatrix(data_str);
 gas_production = data(:,2);		
 gas_production_cell = [];	
@@ -73,7 +73,8 @@ for NUM_all = 1:length(gas_production_cell)
     test_x_feature_label_norm = (test_x_feature_label - x_mu) ./ x_sig;
     test_y_feature_label_norm = (test_y_feature_label - y_mu) ./ y_sig;
     
-    y_train_predict_norm=zeros(size(train_y_feature_label,1),size(train_y_feature_label,2));y_vaild_predict_norm=zeros(size(vaild_y_feature_label,1),size(vaild_y_feature_label,2));	
+    y_train_predict_norm=zeros(size(train_y_feature_label,1),size(train_y_feature_label,2));
+    y_vaild_predict_norm=zeros(size(vaild_y_feature_label,1),size(vaild_y_feature_label,2));	
     y_test_predict_norm=zeros(size(test_y_feature_label,1),size(test_y_feature_label,2));	
     for N1=1:length(list_cell)	
         hidden_size = 64;	% hidden_size
